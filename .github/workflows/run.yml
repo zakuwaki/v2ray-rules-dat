@@ -121,9 +121,9 @@ jobs:
 
       - name: Add `full`, `regexp` and `keyword` type of rules back into "cn", "geolocation-!cn" and "category-ads-all" list
         run: |
-          [ -f "direct-reserve.txt" ] && cat direct-reserve.txt >> ./community/data/cn
-          [ -f "proxy-reserve.txt" ] && cat proxy-reserve.txt >> ./community/data/geolocation-\!cn
-          [ -f "reject-reserve.txt" ] && cat reject-reserve.txt >> ./community/data/category-ads-all
+          [ -f "direct-reserve.txt" ] && cat direct-reserve.txt >> ./community/data/cn || echo "direct-reserve.txt not exist"
+          [ -f "proxy-reserve.txt" ] && cat proxy-reserve.txt >> ./community/data/geolocation-\!cn || echo "proxy-reserve.txt not exist"
+          [ -f "reject-reserve.txt" ] && cat reject-reserve.txt >> ./community/data/category-ads-all || echo "reject-reserve.txt not exist"
 
       - name: Create `google-cn`、`apple-cn`、`gfw` lists
         run: |
