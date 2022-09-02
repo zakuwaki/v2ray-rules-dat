@@ -41,12 +41,10 @@ jobs:
           path: custom
 
       - name: Checkout v2fly/domain-list-community
-        # uses: actions/checkout@v3
-        # with:
-        #   repository: v2fly/domain-list-community
-        #   path: community
-        run: |
-          mkdir -p community/data
+        uses: actions/checkout@v3
+        with:
+          repository: v2fly/domain-list-community
+          path: community
 
       - name: Checkout cokebar/gfwlist2dnsmasq
         uses: actions/checkout@v3
